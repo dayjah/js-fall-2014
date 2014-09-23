@@ -13,6 +13,7 @@
               height: 100px;
               background: #fee;
               -webkit-transition: left .5s;
+              -webkit-transition: top .5s;
           }
 
           .bordered {
@@ -30,7 +31,23 @@
         <div id="rect"></div>
 
         <script>
+        var leftyClickHandler = function(e) {
+
+    if (e.currentTarget.classList.contains('lefty')) {
+        e.currentTarget.classList.remove('lefty');
+    } else {
+        e.currentTarget.classList.add('lefty');
+    }
+
+};
             // Your work goes here.
+            var r =document.getElementById('rect');
+            r.classlist.add('bordered');
+
+          var r =document.getElementByID('rect');
+          r.classList.add('bordered');
+
+          r.addEvenetListner('click', leftyClickHandler);  
         </script>
 
     </body>
