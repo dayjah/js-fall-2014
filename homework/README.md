@@ -1,4 +1,3 @@
-Hello
-=====
-
-In this directory you'll find descriptions of your weekly assignments (in the wk#.md files) and html or js files where you can complete the work. Edit these files directly, commit them and push them to your fork of this repo.
+Deja Holdens Midterm 
+Untitled
+For my midterm I would like to make an image generator that combines images based on what a user inputs in to a textfield. The input will either pull images from around the web(not sure how I would do this) or it would combine images based on the input.
