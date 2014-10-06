@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Homework</title>
+      <style>#sqre{width: 100%; height: 100%;}
+
+          .yes {
+            'background-image-color:#7FFF00;
+      }
+
+          #sqre.yes {color: #7FFF00}
+
+          .no {
+            background-color:#FFFACD;
+          }
+
+          #sqre.no {color:#FFFACD;}
+
+
+      </style>
+       </head>
+    <body>
+
+
+         <div id="sqre">
+        <div id="rect"></div>
+
+        <FORM action style="padding-right:20em;"="">
+
+        <INPUT TYPE="button" VALUE="I have a Question"  
+         onClick="askPerson()">
+       </div>
+       <script>
+        var leftyClickHandler = function(e) {
+
+    if (e.currentTarget.classList.contains('bordered')) {
+        e.currentTarget.classList.remove('bordered');
+    } else {
+        e.currentTarget.classList.add('bordered');
+    }
+
+};// Your work goes here.
+            /*
+            var r =document.getElementById('rect');
+            r.classlist.add('bordered');
+
+          var r =document.getElementByID('rect');
+          r.classList.add('bordered');
+
+          r.addEvenetListner('click', leftyClickHandler);  */
+
+
+          //loop
+           var loop = 1;
+          while(loop <= 1000) {
+            console.log(loop);
+            loop = loop + 1;
+          }
+          var addColor = function (a){
+          var x = askperson("Is your favorite flower a sunflower");
+          if (x === true) {
+            document.getElementById('sqre');
+              sqre.classList.add('yes');
+
+              sqre.addEventListener('click', a);
+              console.log(yes);
+          } 
+          else {
+           document.getElementById('sqre');
+              x.classList.add('no');
+
+              x.addEventListener('click', addColor);
+              console.log(no);
+           }
+         }
+
+         function askPerson()
+  {
+   var answer="   "
+   var statement="Answer yes or no"
+   var answer=prompt("Is your favorite flower a sunflower?")
+
+    var w = document.getElementById('sqre');
+          
+            w.addEventListener('click', askPerson);
+              console.log('done');
+
+
+   if ( answer == "yes")
+    {
+      document.getElementById('sqre');
+              w.classList.remove('no');
+              w.classList.add('yes');
+              console.log("the answer is yes");
+
+    }
+   else 
+    {
+      document.getElementById('sqre');
+              w.classList.remove('yes');
+              w.classList.add('no');
+              console.log("the answer is no");
+    }
+   
+    }
+
+    //FizzBuzz Program
+    for (var i = 1; i <= 100; i++) {
+    if (i % 15 === 0) {
+        console.log('FizzBuzz');
+    } else if (i % 3 === 0) {
+        console.log('Fizz');
+    } else if (i % 5 === 0) {
+        console.log('Buzz');
+    } else {
+        console.log(i);
+    }
+}
+
+        </script>
+
+    </body>
+</html>
