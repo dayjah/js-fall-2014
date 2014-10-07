@@ -4,31 +4,27 @@
       <meta charset="utf-8">
       <title>Homework</title>
       <style>
+      body{
+          
+        }
       #rect {
               position: relative;
               top: 50px;
               left: 50px;
               width: 100px;
               height: 100px;
-              background: #FFD000;
+              background: #00FFDD;
               -webkit-transition: right .5s;
-              -webkit-transition: top .5s;
           }
 
           .borders {
-              border: 2px solid #8000FF;
+              border: 4px solid #8000FF;
           }
-                    #rect.right-side {
-              right: 200px;
+            #rect.rightside {
+              right: 600px;
+              bottom:400px;
           }
-                #rect.top-side {
-              top: 300px;
-          }
-
-          #rect{
-              left: 200px;
-              top: 300px;
-          }
+        
            
 
       #sqre{width: 100%; height: 100%;}
@@ -62,24 +58,23 @@
         <INPUT TYPE="button" VALUE="I have a Question"  
          onClick="askPerson()">
        </div>
-       <script>
-        var leftyClickHandler = function(e) {
+        <script>
+        var rightsideClickHandler = function(e) {
 
-    if (e.currentTarget.classList.contains('borders')) {
-        e.currentTarget.classList.remove('borders');
+    if (e.currentTarget.classList.contains('rightside')) {
+        e.currentTarget.classList.remove('rightside');
     } else {
-        e.currentTarget.classList.add('borders');
+        e.currentTarget.classList.add('rightside');
     }
 
-};// Your work goes here.
-            
+};
+            // Your work goes here.
             var r =document.getElementById('rect');
             r.classlist.add('borders');
 
-          var r =document.getElementByID('rect');
-          r.classList.add('borders');
 
-          
+          r.addEvenetListner('click', rightClickHandler);  
+              console.log('done');
 
 
           //loop
