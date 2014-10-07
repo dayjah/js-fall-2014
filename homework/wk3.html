@@ -4,24 +4,27 @@
       <meta charset="utf-8">
       <title>Homework</title>
       <style>
-       body{
+
+        body{
           
         }
-      #rect {
+
+          #rect {
               position: relative;
               top: 50px;
               left: 50px;
               width: 100px;
               height: 100px;
               background: #00FFDD;
-              -webkit-transition: right .5s;
+              -webkit-transition: left .5s;
           }
 
-          .borders {
+          .bordered {
               border: 4px solid #8000FF;
           }
-            #rect.rightside {
-              right: 600px;
+            
+          #rect.lefty {
+              left: 200px;
           }
         
            
@@ -35,22 +38,23 @@
        
 
         <script>
-        var rightsideClickHandler = function(e) {
+  var leftyClickHandler = function(e) {
 
-    if (e.currentTarget.classList.contains('rightside')) {
-        e.currentTarget.classList.remove('rightside');
+    if (e.currentTarget.classList.contains('lefty')) {
+        e.currentTarget.classList.remove('lefty');
     } else {
-        e.currentTarget.classList.add('rightside');
+        e.currentTarget.classList.add('lefty');
     }
 
 };
+
             // Your work goes here.
-            var r =document.getElementById('rect');
-            r.classlist.add('borders');
+ var r = document.getElementById('rect');
+            r.classList.add('bordered');
 
-
-          r.addEvenetListner('click', rightClickHandler);  
+            r.addEventListener('click', leftyClickHandler);
               console.log('done');
+              
         </script>
 
     </body>
