@@ -11,31 +11,42 @@
               width: 100px;
               height: 100px;
               background: #fee;
-              -webkit-transition: left .5s;
+              -webkit-transition: right .5s;
               -webkit-transition: top .5s;
           }
 
-         
+          .borders {
+              border: 2px solid #7FFF00;
+          }
+                    #rect.right-side {
+              right: 200px;
+          }
+                #rect.top-side {
+              top: 300px;
+          }
 
           #rect{
               left: 200px;
               top: 300px;
           }
+           #wrapper {width: 100%; height: 100%;}
 
       #sqre{width: 100%; height: 100%;}
 
           .yes {
-            background-image-color:#7FFF00
+            background-color:#7FFF00;
            
       }
 
           #sqre.yes {color: #7FFF00}
+           #wrapper.yes {color: #7FFF00;}
 
           .no {
             background-color:#FFFACD;
           }
 
           #sqre.no {color:#FFFACD;}
+           #wrapper.no {color:#FFFACD;}
 
 
       </style>
@@ -54,19 +65,19 @@
        <script>
         var leftyClickHandler = function(e) {
 
-    if (e.currentTarget.classList.contains('bordered')) {
-        e.currentTarget.classList.remove('bordered');
+    if (e.currentTarget.classList.contains('borders')) {
+        e.currentTarget.classList.remove('borders');
     } else {
-        e.currentTarget.classList.add('bordered');
+        e.currentTarget.classList.add('borders');
     }
 
 };// Your work goes here.
             
             var r =document.getElementById('rect');
-            r.classlist.add('bordered');
+            r.classlist.add('borders');
 
           var r =document.getElementByID('rect');
-          r.classList.add('bordered');
+          r.classList.add('borders');
 
           
 
