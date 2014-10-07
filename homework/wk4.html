@@ -3,10 +3,31 @@
     <head>
       <meta charset="utf-8">
       <title>Homework</title>
-      <style>#sqre{width: 100%; height: 100%;}
+      <style>
+      #rect {
+              position: relative;
+              top: 50px;
+              left: 50px;
+              width: 100px;
+              height: 100px;
+              background: #fee;
+              -webkit-transition: left .5s;
+              -webkit-transition: top .5s;
+          }
+
+          .bordered {
+              border: 2px solid #dcc;
+          }
+
+          #rect{
+              left: 200px;
+          }
+
+      #sqre{width: 100%; height: 100%;}
 
           .yes {
-            'background-image-color:#7FFF00;
+            background-image-color:#7FFF00
+           
       }
 
           #sqre.yes {color: #7FFF00}
@@ -41,14 +62,14 @@
     }
 
 };// Your work goes here.
-            /*
+            
             var r =document.getElementById('rect');
             r.classlist.add('bordered');
 
           var r =document.getElementByID('rect');
           r.classList.add('bordered');
 
-          r.addEvenetListner('click', leftyClickHandler);  */
+          
 
 
           //loop
@@ -58,7 +79,7 @@
             loop = loop + 1;
           }
           var addColor = function (a){
-          var x = askperson("Is your favorite flower a sunflower");
+          var x = askPerson("Is your favorite flower a sunflower");
           if (x === true) {
             document.getElementById('sqre');
               sqre.classList.add('yes');
@@ -90,7 +111,6 @@
    if ( answer == "yes")
     {
       document.getElementById('sqre');
-              w.classList.remove('no');
               w.classList.add('yes');
               console.log("the answer is yes");
 
@@ -98,7 +118,6 @@
    else 
     {
       document.getElementById('sqre');
-              w.classList.remove('yes');
               w.classList.add('no');
               console.log("the answer is no");
     }
