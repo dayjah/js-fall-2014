@@ -1,41 +1,117 @@
 <!DOCTYPE html>
 <html>
+<title> Deja Holden Final</title>
+
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-    <link href="final.css" rel="stylesheet" type="text/css">
-    <script src="final.js" type="text/javascript"></script>
-     <script src="http://code.jquery.com/jquery-2.0.3.js" type=
-    "text/javascript"></script>
+    <link href="DH_final.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-2.0.3.js" type="text/javascript"></script>
+    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <body>
-<div class= "background">
-  <div id="container">
-                    <label for="loginmsg" style="color:hsla(0,100%,50%,0.5); font-family:"Open Sans",Open Sans,sans-serif;"></label>
-                    <label for="username">Name:</label>
-                    <input type="text" id="username" name="username">
-                    <div id="lower">
-                        <input type="submit" value="Enter">
-                    </div><!--/ lower-->
-                </form> <!--/ container-->
-           
-            </div> <!-- End Page Content -->
+    <script>
+        /*global document: false */
+        $(document).ready(function() {
+            $('#usrname_value').click(function() {
+                var usrname = $("#usrname").val();
+                if (usrname == '') {
+                    alert("Enter Some Text In Textarea");
+                } else {
+                    console.log(usrname);
+                }
+            });
+        });
 
 
-  <div id="canvas"> 
+function newDiv() {
+    var $div = $("<div class='i'>");
+    $(".identityDivs").append($div);
+    appearDiv();
 
-  </div>   
+    function appearDiv() {
+        var imgCount = 10;
+        var dir = 'images/';
+        var randomCount = Math.round(Math.random() * (imgCount-1)) +1;
+        var images = new Array
+                images[1] ="image.png",
+                images[2] ="image1.png",
+                images[3] ="image2.png",
+                images[4] ="image3.png",
+                images[5] ="image4.png",
+                images[6] ="image5.png",
+                images[7] ="image6.png",
+                images[8] ="image7.png",
+                images[9] ="image8.png",
+                images[10] ="image9.png",
 
-  </div> 
-    <script type="text/javascript">
-$(document).ready(function() {
-      initPage();
-    });
-    </script>   
+        $div.appear
 
+    }
 
+    $div.animate({
+            top: newq[0],
+            left: newq[1]
+        }, speed, function () {
+            animateDiv();
+        });
+
+    };
+}
+
+function makeNewPosition() {
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh, nw];
+
+}
+
+function calcSpeed(prev, next) {
+
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = .01;
+
+    var speed = Math.ceil(greatest / speedModifier);
+
+    return speed;
+
+}
+
+         </script>
+
+    <div class="background">
+        <div id="container">
+
+            <form action="usrname">
+                <label>Name :</label>
+                <div id="username">
+                    <input type="text" id="usrname" value="" value="box-shadow" />
+                </div>
+                <div id="lower">
+                    <input type="button" id="usrname_value" value="Enter" value="box-shadow" />
+                </div>
+                <!--/ lower-->
+            </form>
+            <!--/ container-->
+        </div>
+        <!-- End Page Content -->
+    </div>
+
+    <div class="identityDiv"></div>
 </body>
+
 </html>
 </body>
+
 </html>
