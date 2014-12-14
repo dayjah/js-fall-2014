@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <div class="identityDiv"></div>
     <script>
         /*global document: false */
         $(document).ready(function() {
@@ -21,40 +20,49 @@
                     alert("What's your name?");
                 } else {
                     $('choosePic').show();
+                    $('displayYou').show();
                     console.log(usrname);
                     choosePic();
+                    displayYou();
                     return false;
                 }
             });
 
             function choosePic() {
-
-                var images = 'images/';
-                var theSqr = "";
-                var myIdentity =  ("image.png", "image1.png", "image2.png", "image3.png", "image4.png", "image5.png", "image6.png", "image7.png", "image8.png", "image9.png"),
-                    result = [];
-                for (var i = 0; i < myIdentity.length; i++); {
-                    theSqr += myIdentity[i];
+                var imgCount = 10;
+                var dir = 'images/';
+                var randomCount = Math.round(Math.random() * (imgCount - 1)) + 1;
+                var theSqr = myIdentity;
+                var myIdentity = new Array("image.png", "image1.png", "image2.png", "image3.png", "image4.png", "image5.png", "image6.png", "image7.png", "image8.png", "image9.png");
+                result = [];
+                for (var i = 0; i < 10; i++); {
+                    theSqr += myIdentity[0] + randomCount;
                 }
+                console.log(theSqr);
 
-                var insertSqr = document.createElement( 'div' );
-                insertSqr.id = 'block';
-                insertSqr.className = 'block';
+            }
+            return false;
+        });
+        (function displayYou() {
+            var identityDiv;
 
-                //create the inner div before appending to the body
-                var entered = document.createElement( 'div' );
-                entered.className = 'block-2';
+            var identityDiv = document.getElementById('identityDiv');
+            var insertSqr = document.createElement('div');
+            insertSqr.id = 'block';
+            insertSqr.className = 'block';
 
-                insertSqr.appendChild(entered);
-                document.getElementsByTagName( 'body' ) [0].appendChild( insertSqr );
-                }
-                return false;
-            });
+            //create the inner div before appending to the body
+            var entered = document.getElementById('identityDiv');
 
+            var parentDiv = identityDiv.parentNode;
 
+            parentDiv.insertBefore(insertSqr, entered);
+            entered.className = 'block-2';
+        });
     </script>
 
     <div class="background">
+        <div class="identityDiv"></div>
         <div id="container">
             <form action="usrname">
                 <label>Name :</label>
@@ -70,8 +78,6 @@
         </div>
         <!-- End Page Content -->
     </div>
-
-</body>
 
 </html>
 </body>
