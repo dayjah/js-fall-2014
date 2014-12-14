@@ -17,24 +17,16 @@
             $('#usrname_value').click(function() {
                 var usrname = $("#usrname").val();
                 if (usrname == '') {
-                    alert("Enter Some Text In Textarea");
+                    alert("What's your name?");
                 } else {
+                    $('identityDiv').addClass('is-active');
                     console.log(usrname);
+                    return false;
                 }
             });
         });
 
-
-function newDiv() {
-    var $div = $("<div class='i'>");
-    $(".identityDivs").append($div);
-    appearDiv();
-
-    function appearDiv() {
-        var imgCount = 10;
-        var dir = 'images/';
-        var randomCount = Math.round(Math.random() * (imgCount-1)) +1;
-        var images = new Array
+        var myIdentity = Array ( 
                 images[1] ="image.png",
                 images[2] ="image1.png",
                 images[3] ="image2.png",
@@ -44,55 +36,26 @@ function newDiv() {
                 images[7] ="image6.png",
                 images[8] ="image7.png",
                 images[9] ="image8.png",
-                images[10] ="image9.png",
+                images[10] ="image9.png" );
 
-        $div.appear
+        function insertArray()
+        {
+            var imgCount = 10;
+            var images[] = 'images/';
+            var theSqr = "";
+            for ( var i=0; i<setArray.length; i++)
+            {
+                theSqr += myIdentity[i];
+            }
+            var insertSqr = document.createElement(identify);
+            document.getElementById("identityDiv").appendChild(insertSqr);
+        }
 
-    }
-
-    $div.animate({
-            top: newq[0],
-            left: newq[1]
-        }, speed, function () {
-            animateDiv();
-        });
-
-    };
-}
-
-function makeNewPosition() {
-
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width() - 50;
-
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-
-    return [nh, nw];
-
-}
-
-function calcSpeed(prev, next) {
-
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
-
-    var greatest = x > y ? x : y;
-
-    var speedModifier = .01;
-
-    var speed = Math.ceil(greatest / speedModifier);
-
-    return speed;
-
-}
-
-         </script>
-
+    
+</script>
+<div class="identityDiv"></div>
     <div class="background">
         <div id="container">
-
             <form action="usrname">
                 <label>Name :</label>
                 <div id="username">
@@ -108,7 +71,6 @@ function calcSpeed(prev, next) {
         <!-- End Page Content -->
     </div>
 
-    <div class="identityDiv"></div>
 </body>
 
 </html>
